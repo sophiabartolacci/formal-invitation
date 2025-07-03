@@ -164,32 +164,32 @@ cite {
   }
   
   h1 {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
   }
   
   h1::after {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     margin: 0.3rem 0 0.6rem;
   }
   
   p {
-    font-size: 1rem;
+    font-size: 1.4rem;
     margin-bottom: 0.6rem;
     line-height: 1.25;
   }
   
   .time {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     margin: 0.8rem 0;
   }
   
   .time::before,
   .time::after {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
   
   cite {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     margin-top: 0.4rem;
   }
 }
