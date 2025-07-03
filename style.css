@@ -16,34 +16,46 @@
 body {
   background: #2B0000;
   font-family: "Dancing Script", serif;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 2rem 0;
 }
 
 .letter {
   width: 90vw;
   max-width: 800px;
-  height: 500px;
+  height: 80vh;
+  min-height: 500px;
+  max-height: 90vh;
   background: var(--letter-bg);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   animation: letter-appear 2s ease-out forwards;
+  position: relative;
 }
 
 .letter-content {
   padding: 2rem;
   padding-top: 5rem;
+  padding-bottom: 3rem;
   text-align: center;
   color: var(--letter-text);
   line-height: 1.2;
   opacity: 0;
   animation: fade-in 1s ease-in-out 1.5s forwards;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .letter-content::before {
@@ -57,8 +69,8 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
   color: var(--accent-color);
 }
 
@@ -71,15 +83,15 @@ h1::after {
 }
 
 p {
-  font-size: 1.3rem;
-  margin-bottom: 0.7rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .time {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--accent-color);
-  margin: 1rem 0;
+  margin: 0.8rem 0;
 }
 
 .time::before,
@@ -95,12 +107,12 @@ p {
 
 .signature {
   font-style: italic;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 }
 
 cite {
-  font-size: 1.4rem;
-  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  margin-top: 0.3rem;
   display: block;
 }
 
@@ -131,29 +143,53 @@ cite {
 }
 
 @media (max-width: 650px) {
+  .container {
+    padding: 2rem 0;
+    justify-content: center;
+  }
+  
   .letter {
-    width: 95vw;
-    height: 350px;
+    width: 90vw;
+    height: auto;
+    min-height: auto;
+    max-height: none;
   }
   
   .letter-content {
     padding: 1.5rem;
-    padding-top: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    position: static;
+    overflow-y: visible;
   }
   
   h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+  
+  h1::after {
+    font-size: 1.1rem;
+    margin: 0.3rem 0 0.6rem;
   }
   
   p {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.25;
   }
   
   .time {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin: 0.8rem 0;
+  }
+  
+  .time::before,
+  .time::after {
+    font-size: 0.9rem;
   }
   
   cite {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    margin-top: 0.4rem;
   }
 }
